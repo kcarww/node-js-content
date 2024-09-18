@@ -5,11 +5,12 @@ import app from './config/server.js';
 import rotaNoticias from './app/routes/noticias.js';
 import rotaHome from './app/routes/home.js';
 import rotaFormularioInclusaoNoticia from './app/routes/formulario_inclusao_noticia.js';
-
+import rotaNoticia from './app/routes/noticia.js';
 // Chama as funções de rotas passando 'app' como parâmetro
 rotaNoticias(app);
 rotaHome(app);
 rotaFormularioInclusaoNoticia(app);
+rotaNoticia(app);
 
 // Inicia o servidor com arrow function
 app.listen(3000, () => {
