@@ -1,13 +1,12 @@
-const noticiasModel = require('../models/noticiasModel.js'); // Importe o modelo via require
+module.exports = function (app) {
+    app.get('/noticia/:id', (req, res) => {
+        const connection = app.config.dbConnection()
+        const noticiasModel = new app.app.models.noticiasModel
+        const id = req.params.id
 
-module.exports =  function(app) {
-    app.get('/noticia', (req, res) => {
-        noticiasModel.getNoticias(function(error, result) {
-            if (error) {
-                res.status(500).send('Erro ao buscar a notícia.');
-            } else {
-                res.render('noticia/noticia', { noticia: result });
-            }
-        });
-    });
+        noticiasModel.getNoticia(connection, id, (error, result) => {
+            res.render('noticias/noticia', { noticia: result[0] })
+        })
+    })
+
 }

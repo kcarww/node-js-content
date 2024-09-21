@@ -15,6 +15,7 @@
                     <th scope="col">Titulo</th>
                     <th scope="col">Conteúdo</th>
                     <th scope="col">Data</th>
+                    <th scope="col">Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,9 @@
                             <td><%= noticia.titulo %></td>
                             <td><%= noticia.conteudo %></td>
                             <td><%= noticia.created_at %></td>
+                            <td>
+                                <a href="/noticia/<%= noticia.id %>" class="btn btn-primary">Ver</a>
+                                
                         </tr>
                     <% } %>
                 </tbody>

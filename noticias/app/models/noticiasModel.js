@@ -1,12 +1,20 @@
-// const conn = require('../../config/db-connection')
-// const noticiasModel = {
-//     getNoticias(callback) {
-//         conn.query('SELECT * FROM noticias', callback)
-//     },
 
-//     getNoticia(callback) {
-//         conn.query('SELECT * FROM noticias WHERE id_noticia = 1', callback)
-//     }
-// };
+module.exports = function () {
+    this.getNoticias = function(connection, callback) {
+        connection.query('select * from noticias', callback)
+    }
 
-// module.exports = noticiasModel
+    this.getNoticia = function(connection, id, callback) {
+        connection.query('select * from noticias where id = ?', [id], callback)
+    }
+
+    this.salvarNoticia = function(connection, noticia, callback) {
+        connection.query('insert into noticias set ?', noticia, callback)
+    }
+
+    return this
+}
+
+
+
+
