@@ -1,13 +1,12 @@
-import conn from "../../config/db-connection.js"
+// const conn = require('../../config/db-connection')
+// const noticiasModel = {
+//     getNoticias(callback) {
+//         conn.query('SELECT * FROM noticias', callback)
+//     },
 
-const noticiasModel = {
-    getNoticias(callback) {
-        conn.query('SELECT * FROM noticias', callback);
-    },
+//     getNoticia(callback) {
+//         conn.query('SELECT * FROM noticias WHERE id_noticia = 1', callback)
+//     }
+// };
 
-    getNoticia(callback) {
-        conn.query('SELECT * FROM noticias WHERE id_noticia = 1', callback)
-    }
-};
-
-export default noticiasModel
+// module.exports = noticiasModel

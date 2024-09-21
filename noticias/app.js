@@ -1,16 +1,14 @@
-// Substitui 'require' por 'import'
-import app from './config/server.js';
+const app = require('./config/server');
+// const rotaNoticias = require('./app/routes/noticias');
+// const rotaHome = require('./app/routes/home');
+// const rotaFormularioInclusaoNoticia = require('./app/routes/formulario_inclusao_noticia');
+// const rotaNoticia = require('./app/routes/noticia');
 
-// Importa as rotas usando ESModules
-import rotaNoticias from './app/routes/noticias.js';
-import rotaHome from './app/routes/home.js';
-import rotaFormularioInclusaoNoticia from './app/routes/formulario_inclusao_noticia.js';
-import rotaNoticia from './app/routes/noticia.js';
-// Chama as funções de rotas passando 'app' como parâmetro
-rotaNoticias(app);
-rotaHome(app);
-rotaFormularioInclusaoNoticia(app);
-rotaNoticia(app);
+
+// rotaNoticias(app);
+// rotaHome(app);
+// rotaFormularioInclusaoNoticia(app);
+// rotaNoticia(app);
 
 // Inicia o servidor com arrow function
 app.listen(3000, () => {

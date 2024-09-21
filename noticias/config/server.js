@@ -1,10 +1,13 @@
-import express from 'express'
+const express = require('express'); 
+const consign = require('consign');
+const app = express(); 
 
-const app = express()
+app.set('view engine', 'ejs');
+app.set('views', './app/views');
 
-app.set('view engine', 'ejs')
-app.set('views', './app/views')
+consign()
+	.include('app/routes')
+	.then('config/dbConnection.js')
+	.into(app);
 
-
-
-export default app
+module.exports = app;

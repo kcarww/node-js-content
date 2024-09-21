@@ -1,6 +1,6 @@
-import noticiasModel from '../models/noticiasModel.js';  // Importe o modelo diretamente
+const noticiasModel = require('../models/noticiasModel.js'); // Importe o modelo via require
 
-export default function(app) {
+module.exports =  function(app) {
     app.get('/noticia', (req, res) => {
         noticiasModel.getNoticias(function(error, result) {
             if (error) {
