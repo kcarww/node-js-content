@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<h1><%= title %></h1>
+
+<div class="container">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Nota</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <% alunos.forEach(aluno => { %>
+            <tbody>
+                <tr>
+                    <td><%= aluno.nome %></td>
+                    <td><%= aluno.idade %></td>
+                    <td><%= aluno.nota %></td>
+                    <td><%= aluno.curso %></td>
+                    <td>
+                        <a class="btn btn-success" href="/alunos/edit/<%= aluno.id %>">Editar</a>
+                        <form action="/alunos/<%= aluno.id %>/delete" method="POST" style="display:inline;">
+                        <button class="btn btn-danger" type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+    </table>
+</div>
+    
+
+
+<%- include('partials/footer') %>
